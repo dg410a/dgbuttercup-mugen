@@ -1,4 +1,4 @@
-# DG Bubbles for M.U.G.E.N
+# DG Buttercup for M.U.G.E.N
 
 This is yet another MUGEN project I started back in 2009 (See the ReadmeOld.txt if you want more info). It's basically an edit of SSonic's old Bubbles character, fully optimized with better AI and moves... in addition to Mortal Kombat style moves because I could, at least back then. I barely even made progress with this character since the last time I made changes to her, but hopefully that'll change soon.
 
