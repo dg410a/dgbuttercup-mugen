@@ -1,0 +1,45 @@
+
+--------
+Specials
+--------
+
+Fireball (Aerial and Diagonal) [Finished; Aerial and Diagonal needs addition]
+Tornado [Finished]
+Blankie Grab [Finished]
+Laser Eyes and Hand Beam
+Energy Wave (Aerial and Diagonal) [Finished; possible enhancement]
+Energy Slam [Finished]
+MP5 Sub-Machine Gun [Finished]
+
+------
+Supers
+------
+
+Level 1
+-------
+Detonator Buttercup [Finished; possible Critical Hit addition]
+Maximum Buttercup [Finished; possible Critical Hit addition]
+Mega Laser Beam
+
+Level 2
+-------
+Flaming Flak
+Power Wave
+Energy Quake
+
+Level 3
+-------
+Mange
+Super Fireball
+Typhoon
+
+Level 4
+-------
+
+
+-----------
+Other Stuff
+-----------
+Sound clips
+Throw state [German Suplex]
+Critical Hits

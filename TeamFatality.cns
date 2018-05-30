@@ -1,0 +1,203 @@
+
+;---------------------------------------
+; Team Fatality 1: Blossom and Buttercup
+;---------------------------------------
+
+;--------------
+; Check Partner
+
+[Statedef 9000]
+type = S
+movetype= A
+physics = N
+velset = 0,0
+anim = 9000
+juggle  = 1
+ctrl = 0
+
+[State 0, End]
+type = ChangeState
+triggerall = partner, facing != facing
+trigger1 = partner, authorname = "DoomGuy II" && partner, stateno = [9000,9005]
+value = 9001
+
+[State 0, End]
+type = ChangeState
+trigger1 = Time = 60
+value = 0
+ctrl = 1
+
+;--------------------------------
+; Break Opponent (Check Position)
+
+[Statedef 9001]
+type = S
+movetype= A
+physics = N
+velset = 0,0
+anim = 9000
+juggle  = 1
+ctrl = 0
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = 1
+flag = nobardisplay
+flag2 = nomusic
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = !Time
+value = ifelse(p2dist x > 45,20,19200)
+
+[State 0, ChangeAnim]
+type = VelSet
+trigger1 = Anim = 20
+x = 3
+
+[State 0, ChangeAnim]
+type = VelSet
+trigger1 = Anim != 20
+x = 0
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = P2Dist X <= 45
+value = 9000
+
+[State 0, ChangeAnim]
+type = ChangeState
+triggerall = Time >= 5
+triggerall = Anim = 9000
+trigger1 = partner, name = "Juano`s Sub Guy" && partner, Time >= 120
+trigger2 = partner, name = "DGBlossom" && partner, stateno = 9003 && partner, Time >= 168
+value = 9002
+
+;--------------------------
+; Break Opponent (Fatality)
+
+[Statedef 9002]
+type = S
+movetype= A
+physics = N
+velset = 0,0
+anim = 9001
+juggle  = 1
+ctrl = 0
+
+[State ]
+type = Helper
+trigger1 = !time
+trigger1 = (((id = 56 && teamside = 1) || (id = 58 && teamside = 2)) && partner,authorname = "DoomGuy II") || partner,authorname != "DoomGuy II"
+helpertype = Normal
+ID = 7029
+name = "Dark"
+postype = left
+pos = 0,0
+stateno = 7029
+ownpal = 1
+
+[State 9010, 3]
+type = HitDef
+trigger1 = AnimElem = 6
+attr = S, NA
+damage = 0,0
+animtype = Heavy
+getpower = 0
+givepower = 0
+hitflag = MAFD
+priority = 7
+pausetime = 0,2
+sparkxy = 0,0
+sparkno = -1
+gurad.sparkno = -1
+hitsound = -1
+guardsound = -1
+ground.type = High
+ground.slidetime = 0
+ground.hittime = 0
+ground.velocity = 0
+air.velocity = 0
+air.fall = 1
+fall = 0
+p2stateno = 28000
+numhits = 0
+
+[State 0, EnvColor]
+type = EnvColor
+trigger1 = animelem = 6
+value = 255,255,255
+time = 8
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = 1
+flag = nobardisplay
+flag2 = nomusic
+
+[State 1000, 1]
+type = PlaySnd
+trigger1 = AnimElem = 6
+value = 7504,13
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = Time = 0
+value = 0
+
+[State 0, VarSet]
+type = VarSet
+trigger1 = AnimElem = 1
+v = 8
+value = 1
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 19101
+ctrl = 1
+
+[Statedef 28000]
+type = S
+movetype= H
+physics = S
+juggle = 1
+velset = 0,0
+ctrl = 0
+
+[State 1509, NotHitBy]
+type = NotHitBy
+trigger1 = 1
+value = SCA
+
+[State 0, 1]
+type = Explod
+trigger1 = !Time
+trigger1 = AnimExist(9108099)
+anim = 9108099
+id = 9108099
+postype = p1
+scale = const(size.xscale),const(size.yscale)
+pos = 0,0
+facing = 1
+removetime = -1
+
+ ;Opponent does not have shadow.
+[state 51000, 2]
+type = AssertSpecial
+trigger1 = 1
+flag = noshadow
+flag2 = invisible
+
+;Life goes to zero.
+[State 51000, 3]
+type = LifeSet
+trigger1 = 1
+value = 0
+
+;Enemy it comes back to its proper CNS, however it continues in the position Y = 1000.
+[State 51000, 4]
+type = ChangeState
+trigger1 = Time = 1
+value = 5150
+
