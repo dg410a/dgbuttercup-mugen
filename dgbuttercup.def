@@ -1,0 +1,36 @@
+;***************************************************************************;
+;******************* Created in Fighter Factory Ultimate *******************;
+;*******************      http://www.virtualltek.com     *******************;
+;***************************************************************************;
+
+[Info]
+name = "DGButtercup"
+displayname = "Buttercup"
+versiondate = 6,21,2009
+mugenversion = 1.0
+author = "DoomGuy II"
+pal.defaults = 1
+
+[Files]
+sprite = DGButtercup.sff
+anim = DGButtercup.air
+sound = DGButtercup.snd
+cmd = DGButtercup.cmd
+cns = DGButtercup.cns
+stcommon = DGButtercup_common.cns
+st = DGButtercup.cns
+st1 = Fatality.cns
+st2 = Helpers.cns
+st3 = Specials.cns
+st4 = Supers.cns
+st5 = TeamFatality.cns
+pal1 = vermelha.act
+pal2 = azul.act
+pal3 = cinza.act
+pal4 = default.act
+pal5 = lindinha.act
+pal6 = florzinha.act
+
+[Arcade]
+intro.storyboard = 
+ending.storyboard = 
