@@ -2175,7 +2175,7 @@ fvalue = 0
 
 [State 191, Forces Crash if Unauthorized (AUTHORS PLEASE ASK FIRST BEFORE USING THIS CHARACTER AS A BASE OR MODIFYING IT)]
 type = ChangeState
-trigger1 = Name != "DGButtercup" || AuthorName != "DOSGeek 95" || enemy, AuthorName != "DOSGeek 95"
+trigger1 = (Name != "DGButtercup" || AuthorName != "DOSGeek 95") && enemy, AuthorName != "DOSGeek 95"
 value = 5900
 
 [State 5900, 3] ;Intro
