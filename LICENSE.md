@@ -1,4 +1,4 @@
-DG Blossom MUGEN Character
+DG Buttercup MUGEN Character
 
 Copyright (c) 2009-present DOSGeek 95
 
